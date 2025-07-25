@@ -757,7 +757,7 @@ _CONFIGS = [
                 ]
             ),
             base_config=DataConfig(
-                local_files_only=True,  # Set to True for local-only datasets.
+                # local_files_only=True,  # Set to True for local-only datasets.
                 prompt_from_task=True,
             ),
         ),
@@ -798,7 +798,7 @@ _CONFIGS = [
                 ]
             ),
             base_config=DataConfig(
-                local_files_only=True,  # Set to True for local-only datasets.
+                # local_files_only=True,  # Set to True for local-only datasets.
             ),
         ),
         # weight_loader=weight_loaders.CheckpointWeightLoader("gs://openpi-assets/checkpoints/pi0_base/params"),
@@ -840,7 +840,10 @@ _CONFIGS = [
                 ]
             ),
 
-            base_config=DataConfig(local_files_only=True, prompt_from_task=True),
+            base_config=DataConfig(
+                # local_files_only=True,
+                prompt_from_task=True
+            ),
         ),
         weight_loader=weight_loaders.CheckpointWeightLoader(
             "gs://openpi-assets/checkpoints/pi0_base/params"
@@ -850,7 +853,7 @@ _CONFIGS = [
         ema_decay=0.999,              
     ),
 
-    TrainConfig(  #43GB VRAM needed
+    TrainConfig(  # 43GB VRAM needed
         name="puckpick_full_pi0_fast",
         batch_size=1,
         model=pi0_fast.Pi0FASTConfig(
@@ -879,7 +882,9 @@ _CONFIGS = [
                     )
                 ]
             ),
-            base_config=DataConfig(local_files_only=True),
+            base_config=DataConfig(
+                # local_files_only=True
+            ),
         ),
         weight_loader=weight_loaders.CheckpointWeightLoader(
             "gs://openpi-assets/checkpoints/pi0_fast_base/params"
@@ -917,7 +922,7 @@ _CONFIGS = [
                 ]
             ),
             base_config=DataConfig(
-                local_files_only=True,  # Set to True for local-only datasets.
+                # local_files_only=True,  # Set to True for local-only datasets.
                 prompt_from_task=True,
             ),
         ),
@@ -935,7 +940,7 @@ _CONFIGS = [
         batch_size=4,
         model=pi0.Pi0Config(paligemma_variant="gemma_2b_lora", action_expert_variant="gemma_300m_lora"),
         data=LeRobotAlohaDataConfig(
-            repo_id="pick_lemon_greenpepper",#"lemon_pick",
+            repo_id="pick_lemon_greenpepper",   # "lemon_pick",
             assets=AssetsConfig(
                 assets_dir="gs://openpi-assets/checkpoints/pi0_base/assets",
                 asset_id="trossen_mobile",
@@ -958,7 +963,7 @@ _CONFIGS = [
                 ]
             ),
             base_config=DataConfig(
-                local_files_only=True,  # Set to True for local-only datasets.
+                # local_files_only=True,  # Set to True for local-only datasets.
                 prompt_from_task=True,
             ),
         ),
@@ -998,7 +1003,7 @@ _CONFIGS = [
                 ]
             ),
             base_config=DataConfig(
-                local_files_only=True,  # Set to True for local-only datasets.
+                # local_files_only=True,  # Set to True for local-only datasets.
                 prompt_from_task=True,
             ),
         ),
@@ -1038,7 +1043,7 @@ _CONFIGS = [
                 ]
             ),
             base_config=DataConfig(
-                local_files_only=True,  # Set to True for local-only datasets.
+                # local_files_only=True,  # Set to True for local-only datasets.
                 prompt_from_task=True,
             ),
         ),
@@ -1078,7 +1083,7 @@ _CONFIGS = [
                 ]
             ),
             base_config=DataConfig(
-                local_files_only=True,  # Set to True for local-only datasets.
+                # local_files_only=True,  # Set to True for local-only datasets.
                 prompt_from_task=True,
             ),
         ),
@@ -1118,7 +1123,7 @@ _CONFIGS = [
                 ]
             ),
             base_config=DataConfig(
-                local_files_only=True,  # Set to True for local-only datasets.
+                # local_files_only=True,  # Set to True for local-only datasets.
                 # prompt_from_task=True,
             ),
         ),
